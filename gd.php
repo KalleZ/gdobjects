@@ -9,15 +9,35 @@
 		 * - 0xA0x means read support
 		 */
 
-		const JPEG	= 0x001 | 0x0A1 | 0xA01;
-		const PNG	= 0x002 | 0x0A2 | 0xA02;
-		const WBMP	= 0x003 | 0x0A3 | 0xA03;
-		const GIF	= 0x004 | 0x0A4 | 0xA04;
-		const WEBP	= 0x005 | 0x0A5 | 0xA05;
-		const XPM	= 0x006 | 0xA06;		/* Read-only */
-		const XBM	= 0x007 | 0x0A7 | 0xA07;
-		const GD 	= 0x008 | 0x0A8 | 0xA08;
-		const GD2	= 0x009 | 0x0A9 | 0xA09;
+		const JPEG_READ		= 0x0A01;
+		const JPEG_WRITE	= 0xA001;
+		const PNG_READ		= 0x0A02;
+		const PNG_WRITE		= 0xA002;
+		const WBMP_READ		= 0x0A03;
+		const WBMP_WRITE	= 0xA003;
+		const GIF_READ		= 0x0A04;
+		const GIF_WRITE		= 0xA004;
+		const WEBP_READ		= 0x0A05;
+		const WEBP_WRITE	= 0xA005;
+		const XPM_READ		= 0x0A06;
+		const XPM_WRITE		= 0xA006;					/* For consistency */
+		const XBM_READ		= 0x0A07;
+		const XBM_WRITE		= 0xA007;
+		const GD_READ		= 0x0A08;
+		const GD_WRITE		= 0xA008;
+		const GD2_READ		= 0x0A09;
+		const GD2_WRITE		= 0xA009;
+
+		/* These are determined internally at extension load */
+		const JPEG		= 0x001 | self::JPEG_READ | self::JPEG_WRITE;
+		const PNG		= 0x002 | self::PNG_READ | self::PNG_WRITE;
+		const WBMP		= 0x003 | self::WBMP_READ | self::WBMP_WRITE;
+		const GIF		= 0x004 | self::GIF_READ | self::GIF_WRITE;
+		const WEBP		= 0x005 | self::WEBP_READ | self::WEBP_WRITE;
+		const XPM		= 0x006 | self::XPM_READ;			/* Read-only */
+		const XBM		= 0x007 | self::XBM_READ | self::XBM_WRITE;
+		const GD 		= 0x008 | self::GD_READ | self::GD_WRITE;
+		const GD2		= 0x009 | self::GD2_READ | self::GD2_WRITE;
 
 
 		/* 
