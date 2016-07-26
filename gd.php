@@ -1,6 +1,14 @@
 <?php
 	class gd
 	{
+		/* Version constants (Types are intended) */
+		const VERSION		= '2.2.3';
+		const MAJOR_VERSION	= 2;
+		const MINOR_VERSION	= 2;
+		const RELEASE_VERSION	= 3;
+		const EXTRA_VERSION 	= '';
+		const BUNDLED		= true;
+
 		/*
 		 * Image type constants
 		 *
@@ -53,5 +61,65 @@
 		 * internally, this is determined by gd_info()
 		 */
 		const INFO	= self::JPEG | self::PNG | self::WBMP | self::GIF | self::WEBP | self::XPM | self::XBM | self::GD | self::GD2 | self::FREETYPE;
+
+
+		/*
+		 * Create methods for various types
+		 */
+		public static function createFromJPEG($path)
+		{
+			return(self::createFrom($path, self::JPEG));
+		}
+
+		public static function createFromPNG($path)
+		{
+			return(self::createFrom($path, self::PNG));
+		}
+
+		public static function createFromWBMP($path)
+		{
+			return(self::createFrom($path, self::WBMP));
+		}
+
+		public static function createFromGIF($path)
+		{
+			return(self::createFrom($path, self::GIF));
+		}
+
+		public static function createFromWEBP($path)
+		{
+			return(self::createFrom($path, self::WEBP));
+		}
+
+		public static function createFromXPM($path)
+		{
+			return(self::createFrom($path, self::XPM));
+		}
+
+		public static function createFromXBM($path)
+		{
+			return(self::createFrom($path, self::XBM));
+		}
+
+		public static function createFromGD($path)
+		{
+			return(self::createFrom($path, self::GD));
+		}
+
+		public static function createFromGD2($path)
+		{
+			return(self::createFrom($path, self::GD2));
+		}
+
+		public static function createFrom($path, $type = 0)
+		{
+			/*
+			 * If $type is 0 (or not known), then ext/gd will attempt to guess the 
+			 * signature of the type of image based on its signature and fill out 
+			 * the value of $type.
+			 *
+			 * Then an instance of gdImage is returned with the allocated data
+			 */
+		}
 	}
 ?>
