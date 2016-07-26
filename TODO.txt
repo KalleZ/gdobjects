@@ -98,7 +98,6 @@ IMG_TRIANGLE
 
 Functions:
 
-gd_info
 getimagesize
 getimagesizefromstring
 image_type_to_extension

@@ -8,17 +8,16 @@
 		 * - 0x0Ax means write support
 		 * - 0xA0x means read support
 		 */
-
 		const JPEG_READ		= 0x0A01;
-		const JPEG_WRITE	= 0xA001;
+		const JPEG_WRITE 	= 0xA001;
 		const PNG_READ		= 0x0A02;
 		const PNG_WRITE		= 0xA002;
 		const WBMP_READ		= 0x0A03;
-		const WBMP_WRITE	= 0xA003;
+		const WBMP_WRITE 	= 0xA003;
 		const GIF_READ		= 0x0A04;
 		const GIF_WRITE		= 0xA004;
 		const WEBP_READ		= 0x0A05;
-		const WEBP_WRITE	= 0xA005;
+		const WEBP_WRITE 	= 0xA005;
 		const XPM_READ		= 0x0A06;
 		const XPM_WRITE		= 0xA006;					/* For consistency */
 		const XBM_READ		= 0x0A07;
@@ -39,11 +38,20 @@
 		const GD 		= 0x008 | self::GD_READ | self::GD_WRITE;
 		const GD2		= 0x009 | self::GD2_READ | self::GD2_WRITE;
 
+		/*
+		 * FreeType info
+		 *
+		 * Since the 'INFO' constant is a bitmask, we need to allow the exposure
+		 * of the FreeType linkage by a separate constant here
+		 */
+		const FREETYPE		= 0x00A;
+		const FREETYPE_LINKAGE 	= 'with freetype';
+
 
 		/* 
 		 * Builtin support, this is handled by the extension  
 		 * internally, this is determined by gd_info()
 		 */
-		const SUPPORTS	= self::JPEG | self::PNG | self::WBMP | self::GIF | self::WEBP | self::XPM | self::XBM | self::GD | self::GD2;
+		const INFO	= self::JPEG | self::PNG | self::WBMP | self::GIF | self::WEBP | self::XPM | self::XBM | self::GD | self::GD2 | self::FREETYPE;
 	}
 ?>
