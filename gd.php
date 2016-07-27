@@ -81,59 +81,59 @@
 		 * types to create from a certain part of the image, although this 
 		 * is a fairly simple technique in userland code if you decide so.
 		 */
-		public static function createFromJPEG($path)
+		public static function createFromJPEG(string $path) : gdImage
 		{
 			return(self::createFrom($path, self::JPEG));
 		}
 
-		public static function createFromPNG($path)
+		public static function createFromPNG(string $path) : gdImage
 		{
 			return(self::createFrom($path, self::PNG));
 		}
 
-		public static function createFromWBMP($path)
+		public static function createFromWBMP(string $path) : gdImage
 		{
 			return(self::createFrom($path, self::WBMP));
 		}
 
-		public static function createFromGIF($path)
+		public static function createFromGIF(string $path) : gdImage
 		{
 			return(self::createFrom($path, self::GIF));
 		}
 
-		public static function createFromWEBP($path)
+		public static function createFromWEBP(string $path) : gdImage
 		{
 			return(self::createFrom($path, self::WEBP));
 		}
 
-		public static function createFromXPM($path)
+		public static function createFromXPM(string $path) : gdImage
 		{
 			return(self::createFrom($path, self::XPM));
 		}
 
-		public static function createFromXBM($path)
+		public static function createFromXBM(string $path) : gdImage
 		{
 			return(self::createFrom($path, self::XBM));
 		}
 
-		public static function createFromGD($path)
+		public static function createFromGD(string $path) : gdImage
 		{
 			return(self::createFrom($path, self::GD));
 		}
 
-		public static function createFromGD2($path)
+		public static function createFromGD2(string $path) : gdImage
 		{
 			return(self::createFrom($path, self::GD2));
 		}
 
 		/* Not implemented in bundled libgd yet */
 
-		public static function createFromBMP($path)
+		public static function createFromBMP(string $path) : gdImage
 		{
 			return(self::createFrom($path, self::BMP));
 		}
 
-		public static function createFrom($path, $type = 0)
+		public static function createFrom(string $path, int $type = 0) : gdImage
 		{
 			/*
 			 * If $type is 0 (or not known), then ext/gd will attempt to guess the 
@@ -154,11 +154,11 @@
 		 * They both return an instance to gdImage
 		 */
 
-		public static function grabScreen()
+		public static function grabScreen() : gdImage
 		{
 		}
 
-		public static function grabWindow($handle, $client_area = 0)
+		public static function grabWindow(int $handle, int $client_area = 0) : gdImage
 		{
 		}
 	}

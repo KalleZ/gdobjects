@@ -9,7 +9,7 @@
 
 		/* Meta information, readonly */
 
-		public $trueColor	= false;
+		public $trueColor 	= false;
 
 
 		/*
