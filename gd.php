@@ -35,6 +35,10 @@
 		const GD2_READ		= 0x0A09;
 		const GD2_WRITE		= 0xA009;
 
+		/* Not implemented in bundled libgd yet */
+		const BMP_READ		= 0x0AA;
+		const BMP_WRITE		= 0xA0A;
+
 		/* These are determined internally at extension load */
 		const JPEG		= 0x001 | self::JPEG_READ | self::JPEG_WRITE;
 		const PNG		= 0x002 | self::PNG_READ | self::PNG_WRITE;
@@ -46,13 +50,16 @@
 		const GD 		= 0x008 | self::GD_READ | self::GD_WRITE;
 		const GD2		= 0x009 | self::GD2_READ | self::GD2_WRITE;
 
+		/* Not implemented in bundled libgd yet */
+		const BMP		= 0x00A | self::BMP_READ | self::BMP_WRITE;
+
 		/*
 		 * FreeType info
 		 *
 		 * Since the 'INFO' constant is a bitmask, we need to allow the exposure
 		 * of the FreeType linkage by a separate constant here
 		 */
-		const FREETYPE		= 0x00A;
+		const FREETYPE		= 0x00B;
 		const FREETYPE_LINKAGE 	= 'with freetype';
 
 
@@ -65,6 +72,14 @@
 
 		/*
 		 * Create methods for various types
+		 *
+		 * Note, imagecreatefromgd2part is not covered here, and probably 
+		 * should not be implemented. I could not find any trace of any 
+		 * usage of this function, nor is the gd image format widely used.
+		 *
+		 * What we could do, could be to implement an abstraction for all 
+		 * types to create from a certain part of the image, although this 
+		 * is a fairly simple technique in userland code if you decide so.
 		 */
 		public static function createFromJPEG($path)
 		{
@@ -109,6 +124,13 @@
 		public static function createFromGD2($path)
 		{
 			return(self::createFrom($path, self::GD2));
+		}
+
+		/* Not implemented in bundled libgd yet */
+
+		public static function createFromBMP($path)
+		{
+			return(self::createFrom($path, self::BMP));
 		}
 
 		public static function createFrom($path, $type = 0)
