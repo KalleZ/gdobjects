@@ -1,12 +1,5 @@
 Constants:
 
-IMG_GIF
-IMG_JPG
-IMG_JPEG
-IMG_PNG
-IMG_WBMP
-IMG_XPM
-IMG_WEBP
 IMG_COLOR_TILED
 IMG_COLOR_STYLED
 IMG_COLOR_BRUSHED
@@ -157,7 +150,6 @@ imagesy
 imagetruecolortopalette
 imagettfbbox
 imagettftext
-imagetypes
 imagewbmp
 imagewebp
 imagexbm
