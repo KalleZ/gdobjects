@@ -143,5 +143,23 @@
 			 * Then an instance of gdImage is returned with the allocated data
 			 */
 		}
+
+
+		/*
+		 * Windows only!
+		 *
+		 * Both of these functions are exclusive to ext/gd, and does not 
+		 * require a specific version of libgd (be that bundled or external).
+		 *
+		 * They both return an instance to gdImage
+		 */
+
+		public static function grabScreen()
+		{
+		}
+
+		public static function grabWindow($handle, $client_area = 0)
+		{
+		}
 	}
 ?>
