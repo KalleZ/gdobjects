@@ -15,8 +15,6 @@ IMG_ARC_PIE
 IMG_ARC_CHORD
 IMG_ARC_NOFILL
 IMG_ARC_EDGED
-IMG_GD2_RAW
-IMG_GD2_COMPRESSED
 IMG_EFFECT_REPLACE
 IMG_EFFECT_ALPHABLEND
 IMG_EFFECT_NORMAL
@@ -33,13 +31,6 @@ IMG_FILTER_EMBOSS
 IMG_FILTER_MEAN_REMOVAL
 IMG_FILTER_SMOOTH
 IMG_FILTER_PIXELATE
-PNG_NO_FILTER
-PNG_FILTER_NONE
-PNG_FILTER_SUB
-PNG_FILTER_UP
-PNG_FILTER_AVG
-PNG_FILTER_PAETH
-PNG_ALL_FILTERS
 IMG_FLIP_VERTICAL
 IMG_FLIP_HORIZONTAL
 IMG_FLIP_BOTH
@@ -116,17 +107,12 @@ imagefontwidth
 imageftbbox
 imagefttext
 imagegammacorrect
-imagegd2
-imagegd
-imagegif
 imageinterlace
-imagejpeg
 imagelayereffect
 imageline
 imageloadfont
 imagepalettecopy
 imagepalettetotruecolor
-imagepng
 imagepolygon
 imagerectangle
 imagerotate
@@ -143,9 +129,6 @@ imagestringup
 imagetruecolortopalette
 imagettfbbox
 imagettftext
-imagewbmp
-imagewebp
-imagexbm
 jpeg2wbmp
 png2wbmp
 

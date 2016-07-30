@@ -1,6 +1,23 @@
 <?php
 	class gdImage
 	{
+		/* PNG filters */
+
+		const PNG_NO_FILTER	= 1;
+		const PNG_FILTER_NONE	= 2;
+		const PNG_FILTER_SUB	= 3;
+		const PNG_FILTER_UP	= 4;
+		const PNG_FILTER_AVG	= 5;
+		const PNG_FILTER_PAETH	= 6;
+		const PNG_ALL_FILTERS	= 7;
+
+		/* GD2 types */
+
+		const GD2_RAW		= 1;
+		const GD2_COMPRESSED	= 2;
+
+
+
 		/* Image sizes, readonly */
 
 		public $x		= 0;
@@ -87,6 +104,78 @@
 			}
 
 			return(isset($type_map[$type]));
+		}
+
+		/*
+		 * Output main handler and per type methods
+		 *
+		 * Individual methods have their own signatures for things like quality and filters
+		 * and the $location parameter may be either a file path or a stream to save the 
+		 * buffer to
+		 */
+
+		public function output() : void
+		{
+			static $method_map;
+
+			if(!$this->type)
+			{
+				throw new gdException('No output type have been set');
+			}
+
+			if(!$method_map)
+			{
+				$method_map = [
+						// XPM intentionally missing
+						gd::JPEG	=> 'jpeg', 
+						gd::PNG		=> 'png', 
+						gd::WBMP	=> 'wbmp', 
+						gd::gif		=> 'gif', 
+						gd::WEBP	=> 'webp', 
+						gd::XBM		=> 'xbm', 
+						gd::GD		=> 'gd', 
+						gd::GD2		=> 'gd2', 
+						gd::BMP		=> 'bmp'
+						];
+			}
+
+			call_user_func([$this, $method_map[$this->type]], ... func_get_args());
+		}
+
+		public function jpeg(mixed $location = NULL, int $quality = 75) : void
+		{
+		}
+
+		public function png(mixed $location = NULL, int $compression = 0, int $filters = self::PNG_NO_FILTERS) : void
+		{
+		}
+
+		public function wbmp(mixed $location = NULL, int $foreground = NULL) : void
+		{
+		}
+
+		public function gif(mixed $location) : void
+		{
+		}
+
+		public function webp(mixed $location) : void
+		{
+		}
+
+		public function xbm(mixed $location, int $foreground = NULL) : void
+		{
+		}
+
+		public function gd(mixed $location) : void
+		{
+		}
+
+		public function gd2(mixed $location, int $chunk_size, int $type = self::GD2_RAW) : void
+		{
+		}
+
+		public function bmp(mixed $location, bool $compression) : void
+		{
 		}
 
 
