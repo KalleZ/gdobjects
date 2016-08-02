@@ -38,6 +38,10 @@
 		/* Not implemented in bundled libgd yet */
 		const BMP_READ		= 0x0AA;
 		const BMP_WRITE		= 0xA0A;
+		const TGA_READ		= 0x0AB;
+		const TGA_WRITE		= 0xA0B;
+		const TIFF_READ		= 0x0AC;
+		const TIFF_WRITE	= 0xA0C;
 
 		/* These are determined internally at extension load */
 		const JPEG		= 0x001 | self::JPEG_READ | self::JPEG_WRITE;
@@ -52,6 +56,8 @@
 
 		/* Not implemented in bundled libgd yet */
 		const BMP		= 0x00A | self::BMP_READ | self::BMP_WRITE;
+		const TGA 		= 0x00B | self::TGA_READ | self::TGA_WRITE;
+		const TIFF 		= 0x00C | self::TIFF_READ | self::TIFF_WRITE;
 
 		/*
 		 * FreeType info
@@ -67,7 +73,7 @@
 		 * Builtin support, this is handled by the extension  
 		 * internally, this is determined by gd_info()
 		 */
-		const INFO	= self::JPEG | self::PNG | self::WBMP | self::GIF | self::WEBP | self::XPM | self::XBM | self::GD | self::GD2 | self::FREETYPE;
+		const INFO	= self::JPEG | self::PNG | self::WBMP | self::GIF | self::WEBP | self::XPM | self::XBM | self::GD | self::GD2 | self::TGA | self::TIFF | self::FREETYPE;
 
 
 		/*
@@ -131,6 +137,16 @@
 		public static function createFromBMP(string $path) : gdImage
 		{
 			return(self::createFrom($path, self::BMP));
+		}
+
+		public static function createFromTGA(string $path) : gdImage
+		{
+			return(self::createFrom($path, self::TGA));
+		}
+
+		public static function createFromTIFF(string $path) : gdImage
+		{
+			return(self::createFrom($path, self::TIFF));
 		}
 
 		public static function createFrom(string $path, int $type = 0) : gdImage

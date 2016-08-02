@@ -146,7 +146,11 @@
 						gd::XBM 	=> gd::XBM_WRITE, 	/* Maybe one day we will have write support */
 						gd::GD 		=> gd::GD_WRITE, 
 						gd::GD2 	=> gd::GD2_WRITE, 
-						gd::BMP 	=> gd::BMP_WRITE
+
+						// Not implemented in ext/gd yet
+						gd::BMP 	=> gd::BMP_WRITE, 
+						gd::TGA 	=> gd::TGA_WRITE, 
+						gd::TIFF 	=> gd::TIFF_WRITE
 						];
 
 				foreach($test as $intern_type => $write)
@@ -190,7 +194,11 @@
 						gd::XBM		=> 'xbm', 
 						gd::GD		=> 'gd', 
 						gd::GD2		=> 'gd2', 
-						gd::BMP		=> 'bmp'
+
+						// Not implemented in ext/gd yet
+						gd::BMP		=> 'bmp', 
+						gd::TGA 	=> 'tga', 
+						gd::TIFF 	=> 'tiff'
 						];
 			}
 
@@ -302,7 +310,11 @@
 						gd::XBM 	=> 'image/xbm', 		/* Maybe one day we will have write support */
 						gd::GD 		=> 'application/octet-stream', 	/* Unknown type, so defaults to binary */
 						gd::GD2 	=> 'application/octet-stream', 	/* Unknown type, so defaults to binary */
-						gd::BMP 	=> 'image/bmp'
+
+						// Not implemented in ext/gd yet
+						gd::BMP 	=> 'image/bmp', 
+						gd::TGA 	=> 'image/tga', 
+						gd::TIFF 	=> 'image/tiff'
 						];
 			}
 
