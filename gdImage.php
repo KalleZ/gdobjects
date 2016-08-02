@@ -3,19 +3,24 @@
 	{
 		/* PNG filters */
 
-		const PNG_NO_FILTER	= 1;
-		const PNG_FILTER_NONE	= 2;
-		const PNG_FILTER_SUB	= 3;
-		const PNG_FILTER_UP	= 4;
-		const PNG_FILTER_AVG	= 5;
-		const PNG_FILTER_PAETH	= 6;
-		const PNG_ALL_FILTERS	= 7;
+		const PNG_NO_FILTER		= 1;
+		const PNG_FILTER_NONE		= 2;
+		const PNG_FILTER_SUB		= 3;
+		const PNG_FILTER_UP		= 4;
+		const PNG_FILTER_AVG		= 5;
+		const PNG_FILTER_PAETH		= 6;
+		const PNG_ALL_FILTERS		= 7;
 
 		/* GD2 types */
 
-		const GD2_RAW		= 1;
-		const GD2_COMPRESSED	= 2;
+		const GD2_RAW			= 1;
+		const GD2_COMPRESSED		= 2;
 
+		/* Layer effects */
+		const EFFECT_REPLACE		= 1;
+		const EFFECT_ALPHABLEND		= 2;
+		const EFFECT_NORMAL		= 2;	/* Same as EFFECT_ALPHABLEND */
+		const EFFECT_OVERLAY		= 3;
 
 
 		/* Image sizes, readonly */
@@ -312,6 +317,30 @@
 		public function antiAlias(bool $flag) : void
 		{
 			$this->antiAlias = $flag;
+		}
+
+		/* Layer effect */
+
+		public function layerEffect(int $effect)
+		{
+			static $effects;
+
+			if(!$effects)
+			{
+				$effects = [
+						// EFFECT_NORMAL intentionally missing
+						self::EFFECT_REPLACE	=> 1, 
+						self::EFFECT_ALPHABLEND	=> 1, 
+						self::EFFECT_OVERLAY	=> 1
+						];
+			}
+
+			if(!isset($effects[$effect]))
+			{
+				throw new gdException('Invalid effect');
+			}
+
+			/* ... */
 		}
 	}
 ?>

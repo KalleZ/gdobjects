@@ -15,10 +15,6 @@ IMG_ARC_PIE
 IMG_ARC_CHORD
 IMG_ARC_NOFILL
 IMG_ARC_EDGED
-IMG_EFFECT_REPLACE
-IMG_EFFECT_ALPHABLEND
-IMG_EFFECT_NORMAL
-IMG_EFFECT_OVERLAY
 IMG_FILTER_NEGATE
 IMG_FILTER_GRAYSCALE
 IMG_FILTER_BRIGHTNESS
@@ -103,7 +99,6 @@ imagefontwidth
 imageftbbox
 imagefttext
 imageinterlace
-imagelayereffect
 imageline
 imageloadfont
 imagepalettecopy
