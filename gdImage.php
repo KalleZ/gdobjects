@@ -29,6 +29,28 @@
 		const FLIP_VERTICAL		= 2;
 		const FLIP_BOTH			= 3;
 
+		/* Filters */
+
+		const FILTER_NEGATE		= 1;
+		const FILTER_GRAYSCALE		= 2;
+		const FILTER_BRIGHTNESS		= 3;
+		const FILTER_CONTRAST		= 4;
+		const FILTER_COLORIZE		= 5;
+		const FILTER_EDGEDETECT		= 6;
+		const FILTER_GAUSSIAN_BLUR	= 7;
+		const FILTER_SELECTIVE_BLUR	= 8;
+		const FILTER_EMBOSS		= 9;
+		const FILTER_MEAN_REMOVAL	= 10;
+		const FILTER_SMOOTH		= 11;
+		const FILTER_PIXELATE		= 12;
+		const FILTER_SCATTER		= 13;
+
+		/* Blur modes */
+
+		const BLUR_DEFAULT		= 2;	/* BLUR_SELECTIVE */
+		const BLUR_GAUSSIAN		= 1;
+		const BLUR_SELECTIVE		= 2;
+
 
 		/* Image sizes, readonly */
 
@@ -328,7 +350,7 @@
 
 		/* Layer effect */
 
-		public function layerEffect(int $effect)
+		public function layerEffect(int $effect) : bool
 		{
 			static $effects;
 
@@ -352,11 +374,11 @@
 
 		/* Flip & Rotation */
 
-		public function rotate(float $angle, gdColor | int $background_color, bool $ignore_transparency = false)
+		public function rotate(float $angle, gdColor | int $background_color, bool $ignore_transparency = false) : bool
 		{
 		}
 
-		public function flip($mode)
+		public function flip($mode) : bool
 		{
 			static $modes;
 
@@ -375,6 +397,105 @@
 			}
 
 			/* ... */
+		}
+
+		/* Filters */
+
+		public function filter(int $filter, ... $args) : bool
+		{
+			static $filter_callbacks;
+
+			if(!$filter_callbacks)
+			{
+				$filter_callbacks = [
+							self::FILTER_NEGATE 		=> 'negate', 
+							self::FILTER_GRAYSCALE 		=> 'grayscale', 
+							self::FILTER_BRIGHTNESS		=> 'brightness', 
+							self::FILTER_CONTRAST		=> 'contrast', 
+							self::FILTER_COLORIZE		=> 'colorize', 
+							self::FILTER_EDGEDETECT		=> 'edgeDetect', 
+							self::FILTER_GAUSSIAN_BLUR	=> 'gaussianBlur', 
+							self::FILTER_SELECTIVE_BLUR	=> 'blur', 
+							self::FILTER_EMBOSS		=> 'emboss', 
+							self::FILTER_MEAN_REMOVAL 	=> 'meanRemoval', 
+							self::FILTER_SMOOTH		=> 'smooth', 
+							self::FILTER_PIXELATE 		=> 'pixelate', 
+							self::FILTER_SCATTER 		=> 'scatter'
+							];
+			}
+
+			if(!isset($filter_callbacks[$filter]))
+			{
+				throw new gdException('Invalid filter');
+			}
+
+			return(call_user_func_array([$this, $filter_callbacks[$filter]], $args));
+		}
+
+		public function negate() : bool
+		{
+		}
+
+		public function grayscale() : bool
+		{
+		}
+
+		public function brightness(int $level) : bool
+		{
+		}
+
+		public function contrast(int $level) : bool
+		{
+		}
+
+		public function colorize(int $red, int $blue, int $blue, int $alpha) : bool
+		{
+		}
+
+		public function edgeDetect() : bool
+		{
+		}
+
+		public function gaussianBlur() : bool
+		{
+		}
+
+		public function selectiveBlur() : bool
+		{
+		}
+
+		public function emboss() : bool
+		{
+		}
+
+		public function meanRemoval() : bool
+		{
+		}
+
+		public function smooth(int $level) : bool
+		{
+		}
+
+		public function pixelate(int $block_size, bool $advanced = false) : bool
+		{
+		}
+
+		public function scatter(int $sub, int $plus, array $colors) : bool
+		{
+		}
+
+		public function blur(int $blur = self::BLUR_DEFAULT)
+		{
+			if($blur == self::BLUR_GAUSSIAN)
+			{
+				return($this->gaussianBlur());
+			}
+			elseif($blur == self:BLUR_SELECTIVE)
+			{
+				return($this->selectiveBlur());
+			}
+
+			throw new gdException('Invalid blur mode');
 		}
 	}
 ?>
