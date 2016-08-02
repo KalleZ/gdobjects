@@ -58,7 +58,6 @@ IMG_TRIANGLE
 
 Functions:
 
-image2wbmp
 imageaffine
 imageaffinematrixconcat
 imageaffinematrixget
@@ -129,8 +128,6 @@ imagestringup
 imagetruecolortopalette
 imagettfbbox
 imagettftext
-jpeg2wbmp
-png2wbmp
 
 Other
 
