@@ -27,9 +27,6 @@ IMG_FILTER_EMBOSS
 IMG_FILTER_MEAN_REMOVAL
 IMG_FILTER_SMOOTH
 IMG_FILTER_PIXELATE
-IMG_FLIP_VERTICAL
-IMG_FLIP_HORIZONTAL
-IMG_FLIP_BOTH
 IMG_BELL
 IMG_BESSEL
 IMG_BILINEAR_FIXED
@@ -93,7 +90,6 @@ imagefilledpolygon
 imagefilledrectangle
 imagefilltoborder
 imagefilter
-imageflip
 imagefontheight
 imagefontwidth
 imageftbbox
@@ -104,7 +100,6 @@ imageloadfont
 imagepalettecopy
 imagepolygon
 imagerectangle
-imagerotate
 imagescale
 imagesetbrush
 imagesetinterpolation

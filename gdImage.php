@@ -17,10 +17,17 @@
 		const GD2_COMPRESSED		= 2;
 
 		/* Layer effects */
+
 		const EFFECT_REPLACE		= 1;
 		const EFFECT_ALPHABLEND		= 2;
 		const EFFECT_NORMAL		= 2;	/* Same as EFFECT_ALPHABLEND */
 		const EFFECT_OVERLAY		= 3;
+
+		/* Flip modes */
+
+		const FLIP_HORIZONTAL		= 1;
+		const FLIP_VERTICAL		= 2;
+		const FLIP_BOTH			= 3;
 
 
 		/* Image sizes, readonly */
@@ -188,7 +195,7 @@
 		{
 		}
 
-		public function xbm(mixed $location, int $foreground = NULL) : void
+		public function xbm(mixed $location, gdColor | int $foreground = NULL) : void
 		{
 		}
 
@@ -338,6 +345,33 @@
 			if(!isset($effects[$effect]))
 			{
 				throw new gdException('Invalid effect');
+			}
+
+			/* ... */
+		}
+
+		/* Flip & Rotation */
+
+		public function rotate(float $angle, gdColor | int $background_color, bool $ignore_transparency = false)
+		{
+		}
+
+		public function flip($mode)
+		{
+			static $modes;
+
+			if(!$modes)
+			{
+				$modes = [
+						self::FLIP_HORIZONTAL	=> 1, 
+						self::FLIP_VERTICAL	=> 1, 
+						self::FLIP_BOTH 	=> 1
+						];
+			}
+
+			if(!isset($modes[$mode]))
+			{
+				throw new gdException('Invalid flip mode');
 			}
 
 			/* ... */
