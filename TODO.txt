@@ -93,12 +93,8 @@ imagepalettecopy
 imagepolygon
 imagerectangle
 imagescale
-imagesetbrush
 imagesetinterpolation
-imagesetpixel
 imagesetstyle
-imagesetthickness
-imagesettile
 imagestring
 imagestringup
 imagettfbbox

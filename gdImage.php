@@ -504,7 +504,7 @@
 		{
 		}
 
-		public function blur(int $blur = self::BLUR_DEFAULT)
+		public function blur(int $blur = self::BLUR_DEFAULT) : bool
 		{
 			if($blur == self::BLUR_GAUSSIAN)
 			{
@@ -516,6 +516,24 @@
 			}
 
 			throw new gdException('Invalid blur mode');
+		}
+
+		/* Setters */
+
+		public function setThickness(int $thickness) : bool
+		{
+		}
+
+		public function setTile(gdImage $im) : bool
+		{
+		}
+
+		public function setBrush(gdImage $im) : bool
+		{
+		}
+
+		public function setPixel(gdImage $im, int $x, int $y, gdColor | int $color) : bool
+		{
 		}
 	}
 ?>
