@@ -87,7 +87,6 @@ imagefontheight
 imagefontwidth
 imageftbbox
 imagefttext
-imageinterlace
 imageline
 imageloadfont
 imagepalettecopy

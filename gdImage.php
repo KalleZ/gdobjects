@@ -69,6 +69,7 @@
 		public $alphaBlending	= false;	/* Only changable for true color images */
 		public $saveAlpha	= false;	/* Save alpha flag, only works if $alphaBlending is off */
 		public $antiAlias	= false;	/* For true color only */
+		public $interlace	= false;	/* Used for progressive JPEGs */
 
 		public $freed		= false;	/* [readonly] is ->destroy() called? */
 		public $type		= 0;		/* [readonly] gd::XXX type constants */
@@ -341,6 +342,13 @@
 
 		public function gammaCorrect(float $input, float $output) : bool
 		{
+		}
+
+		/* Interlace */
+
+		public function interlace(bool $flag) : void
+		{
+			$this->interlace = $flag;
 		}
 
 		/* Alpha related methods */
