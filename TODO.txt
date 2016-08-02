@@ -108,3 +108,4 @@ imagettftext
 Other
 
 GIF Animation
+gdImage::__clone support
