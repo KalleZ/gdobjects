@@ -24,11 +24,21 @@
 		public $y		= 0;
 
 
-		/* Meta information, readonly */
+		/*
+		 * Meta information
+		 *
+		 * Some of these properties are overloaded, and have special 
+		 * behavior if changed
+		 */
 
-		public $trueColor 	= false;
-		public $type		= 0;		/* gd::XXX type constants */
-		public $sendHeader	= false;	/* Auto send header for outputs, defaults to false */
+		public $trueColor 	= false;	/* Calls ->toPalette() or ->toTrueColor() depending on the new value */
+		public $alphaBlending	= false;	/* Only changable for true color images */
+		public $saveAlpha	= false;	/* Save alpha flag, only works if $alphaBlending is off */
+		public $antiAlias	= false;	/* For true color only */
+
+		public $freed		= false;	/* [readonly] is ->destroy() called? */
+		public $type		= 0;		/* [readonly] gd::XXX type constants */
+		public $sendHeader	= false;	/* [readonly] Auto send header for outputs, defaults to false */
 
 
 		/*
@@ -71,6 +81,17 @@
 			{
 				$this->type = $type;
 			}
+		}
+
+		/* Destroy methods */
+
+		public function __destruct()
+		{
+		}
+
+		public function destroy()
+		{
+			$this->freed = true;
 		}
 
 		/* Internal helper function for verification of a type hint -- Marked as protected so child classes can use it */
@@ -178,7 +199,6 @@
 		{
 		}
 
-
 		/*
 		 * Output helper methods aka black magic
 		 *
@@ -225,7 +245,6 @@
 			return(ob_get_clean());
 		}
 
-
 		/* Send header helper method, this applies to __invoke() and output() */
 
 		protected function sendHeader() : void
@@ -254,6 +273,45 @@
 			}
 
 			header('Content-Type: ' . $headers[$this->type]);
+		}
+
+		/* Palette <> True color convertion methods */
+
+		public function toPalette() : bool
+		{
+			/* ... */
+
+			$this->trueColor = false;
+		}
+
+		public function toTrueColor() : bool
+		{
+			/* ... */
+
+			$this->trueColor = true;
+		}
+
+		/* Gamma correction */
+
+		public function gammaCorrect(float $input, float $output) : bool
+		{
+		}
+
+		/* Alpha related methods */
+
+		public function alphaBlending(bool $flag) : void
+		{
+			$this->alphaBlending = $flag;
+		}
+
+		public function saveAlpha(bool $flag) : void
+		{
+			$this->saveAlpha = $flag;
+		}
+
+		public function antiAlias(bool $flag) : void
+		{
+			$this->antiAlias = $flag;
 		}
 	}
 ?>

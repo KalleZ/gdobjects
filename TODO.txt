@@ -61,8 +61,6 @@ Functions:
 imageaffine
 imageaffinematrixconcat
 imageaffinematrixget
-imagealphablending
-imageantialias
 imagearc
 imagechar
 imagecharup
@@ -91,7 +89,6 @@ imagecopyresized
 imagecrop
 imagecropauto
 imagedashedline
-imagedestroy
 imageellipse
 imagefill
 imagefilledarc
@@ -105,17 +102,14 @@ imagefontheight
 imagefontwidth
 imageftbbox
 imagefttext
-imagegammacorrect
 imageinterlace
 imagelayereffect
 imageline
 imageloadfont
 imagepalettecopy
-imagepalettetotruecolor
 imagepolygon
 imagerectangle
 imagerotate
-imagesavealpha
 imagescale
 imagesetbrush
 imagesetinterpolation
@@ -125,7 +119,6 @@ imagesetthickness
 imagesettile
 imagestring
 imagestringup
-imagetruecolortopalette
 imagettfbbox
 imagettftext
 
