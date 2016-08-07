@@ -527,6 +527,10 @@
 			throw new gdException('Invalid blur mode');
 		}
 
+		public convolution(array $matrix, float $fiv, float $offset)
+		{
+		}
+
 		/* Setters */
 
 		public function setThickness(int $thickness) : bool
@@ -602,6 +606,12 @@
 		}
 
 		public function ttfText(float $size, float $angle, int $x, int $y, gdColor | int $color, string $font, string $text) : array
+		{
+		}
+
+		/* Drawing */
+
+		public function line(int $x1, int $y1, int $x2, int $y2 : gdColor | int $color) : bool
 		{
 		}
 	}
