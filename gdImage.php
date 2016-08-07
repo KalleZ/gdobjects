@@ -535,5 +535,27 @@
 		public function setPixel(gdImage $im, int $x, int $y, gdColor | int $color) : bool
 		{
 		}
+
+		/* Basic fonts */
+
+		public function getFontHeight(int $font) : int
+		{
+		}
+
+		public function getFontWidth(int $font) : int
+		{
+		}
+
+		public function getFontInfo(int $font) : array
+		{
+			return([
+				'height'	=> $this->getFontHeight($font), 
+				'width'		=> $this->getFontWidth($font)
+				]);
+		}
+
+		public function loadFont(string $font) : int
+		{
+		}
 	}
 ?>

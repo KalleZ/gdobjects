@@ -83,12 +83,9 @@ imagefilledellipse
 imagefilledpolygon
 imagefilledrectangle
 imagefilltoborder
-imagefontheight
-imagefontwidth
 imageftbbox
 imagefttext
 imageline
-imageloadfont
 imagepalettecopy
 imagepolygon
 imagerectangle
