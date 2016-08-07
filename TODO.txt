@@ -74,8 +74,6 @@ imagefilledellipse
 imagefilledpolygon
 imagefilledrectangle
 imagefilltoborder
-imageftbbox
-imagefttext
 imageline
 imagepalettecopy
 imagepolygon
@@ -85,8 +83,6 @@ imagesetinterpolation
 imagesetstyle
 imagestring
 imagestringup
-imagettfbbox
-imagettftext
 
 Other
 

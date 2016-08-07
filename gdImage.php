@@ -576,5 +576,33 @@
 		public function cropAuto(int $mode, float $threshold = .5, gdColor | int $color) : bool
 		{
 		}
+
+		/* Bounding box and text writing */
+
+		public static function bbox(float $size, float $angle, string $font, string $text, array $extra_info = NULL) : array
+		{
+			// Decide internally if font is TTF or FT and use the respectively bbox method
+		}
+
+		public static function ftBbox(float $size, float $angle, string $font, string $text, array $extra_info = NULL) : array
+		{
+		}
+
+		public static function ttfBbox(float $size, float $angle, string $font, string $text) : array
+		{
+		}
+
+		public function text(float $size, float $angle, int $x, int $y, gdColor | int $color, string $font, string $text, array $extra_info = NULL) : array
+		{
+			// Decide internally if font is TTF or FT and use the respectively text method
+		}
+
+		public function ftText(float $size, float $angle, int $x, int $y, gdColor | int $color, string $font, string $text, array $extra_info = NULL) : array
+		{
+		}
+
+		public function ttfText(float $size, float $angle, int $x, int $y, gdColor | int $color, string $font, string $text) : array
+		{
+		}
 	}
 ?>
