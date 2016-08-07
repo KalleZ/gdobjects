@@ -577,7 +577,7 @@
 		{
 		}
 
-		public function setPixel(gdImage $im, int $x, int $y, gdColor | int $color) : bool
+		public function setPixel(int $x, int $y, gdColor | int $color) : bool
 		{
 		}
 
