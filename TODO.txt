@@ -75,7 +75,6 @@ imagecopyresampled
 imagecopyresized
 imagecrop
 imagecropauto
-imagedashedline
 imageellipse
 imagefill
 imagefilledarc
