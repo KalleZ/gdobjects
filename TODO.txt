@@ -1,10 +1,5 @@
 Constants:
 
-IMG_COLOR_TILED
-IMG_COLOR_STYLED
-IMG_COLOR_BRUSHED
-IMG_COLOR_STYLEDBRUSHED
-IMG_COLOR_TRANSPARENT
 IMG_ARC_ROUNDED
 IMG_ARC_PIE
 IMG_ARC_CHORD
@@ -49,7 +44,6 @@ imagepalettecopy
 imagepolygon
 imagerectangle
 imagescale
-imagesetstyle
 imagestring
 imagestringup
 

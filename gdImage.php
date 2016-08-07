@@ -92,6 +92,14 @@
 		const WEIGHTED4 		= 20;
 		const TRIANGLE  		= 21;
 
+		/* Style constants */
+
+		const COLOR_TILED 		= 1;
+		const COLOR_STYLED 		= 2;
+		const COLOR_BRUSHED 		= 3;
+		const COLOR_STYLEBRUSHED 	= 4;
+		const COLOR_TRANSPARENT  	= 5;
+
 
 		/* Image sizes, readonly */
 
@@ -582,6 +590,10 @@
 		}
 
 		public function setInterpolation(int $method) : bool
+		{
+		}
+
+		public function setStyle(array $style) : bool
 		{
 		}
 
