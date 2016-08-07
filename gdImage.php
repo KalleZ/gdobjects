@@ -51,6 +51,15 @@
 		const BLUR_GAUSSIAN		= 1;
 		const BLUR_SELECTIVE		= 2;
 
+		/* Crop modes */
+
+		const CROP_DEFAULT		= self::CROP_TRANSPARENT | self::CROP_SIDES;
+		const CROP_TRANSPARENT		= 1;
+		const CROP_BLACK		= 2;
+		const CROP_WHITE		= 4;
+		const CROP_SIDES		= 8;
+		const CROP_THRESHOLD		= 16;
+
 
 		/* Image sizes, readonly */
 
@@ -555,6 +564,16 @@
 		}
 
 		public function loadFont(string $font) : int
+		{
+		}
+
+		/* Cropping */
+
+		public function crop(int $x, int $y, int $width, int $height) : bool
+		{
+		}
+
+		public function cropAuto(int $mode, float $threshold = .5, gdColor | int $color) : bool
 		{
 		}
 	}

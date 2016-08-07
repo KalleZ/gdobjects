@@ -15,12 +15,6 @@ IMG_ARC_PIE
 IMG_ARC_CHORD
 IMG_ARC_NOFILL
 IMG_ARC_EDGED
-IMG_CROP_DEFAULT
-IMG_CROP_TRANSPARENT
-IMG_CROP_BLACK
-IMG_CROP_WHITE
-IMG_CROP_SIDES
-IMG_CROP_THRESHOLD
 IMG_BELL
 IMG_BESSEL
 IMG_BILINEAR_FIXED
@@ -73,8 +67,6 @@ imagecopymerge
 imagecopymergegray
 imagecopyresampled
 imagecopyresized
-imagecrop
-imagecropauto
 imageellipse
 imagefill
 imagefilledarc
