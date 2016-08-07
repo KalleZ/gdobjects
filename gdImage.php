@@ -60,6 +60,38 @@
 		const CROP_SIDES		= 8;
 		const CROP_THRESHOLD		= 16;
 
+		/* Affine constants */
+
+		const AFFINE_TRANSLATE 		= 1;
+		const AFFINE_SCALE 		= 2;
+		const AFFINE_ROTATE 		= 3;
+		const AFFINE_SHEAR_HORIZONTAL 	= 4;
+		const AFFINE_SHEAR_VERTICAL 	= 5;
+
+		/* Interpolation constants */
+
+		const BELL 			= 1;
+		const BESSEL 			= 2;
+		const BILINEAR_FIXED 		= 3;
+		const BICUBIC 			= 4;
+		const BICUBIC_FIXED 		= 5;
+		const BLACKMAN 			= 6;
+		const BOX 			= 7;
+		const BSPLINE 			= 8;
+		const CATMULLROM 		= 9;
+		const GAUSSIAN 			= 10;
+		const GENERALIZED_CUBIC 	= 11;
+		const HERMITE 			= 12;
+		const HAMMING 			= 13;
+		const HANNING 			= 14;
+		const HITCHELL 			= 15;
+		const POWER 			= 16;
+		const QUADRATIC 		= 17;
+		const SINC 			= 18;
+		const NEAREST_HEIGHBOUR 	= 19;
+		const WEIGHTED4 		= 20;
+		const TRIANGLE  		= 21;
+
 
 		/* Image sizes, readonly */
 
@@ -549,6 +581,10 @@
 		{
 		}
 
+		public function setInterpolation(int $method) : bool
+		{
+		}
+
 		/* Basic fonts */
 
 		public function getFontHeight(int $font) : int
@@ -612,6 +648,20 @@
 		/* Drawing */
 
 		public function line(int $x1, int $y1, int $x2, int $y2 : gdColor | int $color) : bool
+		{
+		}
+
+		/* Affine methods */
+
+		public function affine(array $affine, int $clip_x = NULL, int $clip_y = NULL, int $clip_width = NULL, int $clip_height = NULL) : bool
+		{
+		}
+
+		public static function affineMatrixConcat(array $matrix1, array $matrix2) : array
+		{
+		}
+
+		public static function affineMatrixGet(int $type, array $options) : array
 		{
 		}
 	}
