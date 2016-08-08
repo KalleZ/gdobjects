@@ -10,8 +10,6 @@ IMG_ARC_EDGED
 Functions:
 
 imagearc
-imagechar
-imagecharup
 imagecolorallocate
 imagecolorallocatealpha
 imagecolorat
@@ -44,8 +42,6 @@ imagepalettecopy
 imagepolygon
 imagerectangle
 imagescale
-imagestring
-imagestringup
 
 Other
 

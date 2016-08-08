@@ -676,5 +676,25 @@
 		public static function affineMatrixGet(int $type, array $options) : array
 		{
 		}
+
+		/* Basic font writing (non FreeType) methods */
+
+		public function char(int $font, int $x, int $y, string $char, gdColor | int $color) : bool
+		{
+			return($this->string($font, $x, $y, $char{0}, $color));
+		}
+
+		public function charUp(int $font, int $x, int $y, string $char, gdColor | int $color) : bool
+		{
+			return($this->stringUp($font, $x, $y, $char{0}, $color));
+		}
+
+		public function string(int $font, int $x, int $y, string $string, gdColor | int $color) : bool
+		{
+		}
+
+		public function stringUp(int $font, int $x, int $y, string $string, gdColor | int $color) : bool
+		{
+		}
 	}
 ?>
