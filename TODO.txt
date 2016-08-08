@@ -41,7 +41,6 @@ imagefilltoborder
 imagepalettecopy
 imagepolygon
 imagerectangle
-imagescale
 
 Other
 

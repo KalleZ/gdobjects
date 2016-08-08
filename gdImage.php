@@ -619,13 +619,17 @@
 		{
 		}
 
-		/* Cropping */
+		/* Cropping & scaling */
 
 		public function crop(int $x, int $y, int $width, int $height) : bool
 		{
 		}
 
 		public function cropAuto(int $mode, float $threshold = .5, gdColor | int $color) : bool
+		{
+		}
+
+		public function scale(int $new_width, int $new_height = -1, int $mode = self::BILINEAR_FIXED) : bool
 		{
 		}
 
