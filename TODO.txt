@@ -25,3 +25,5 @@ imagecopyresized
 Other
 
 GIF Animation
+imagesetclip()
+imagegetclip()
