@@ -178,6 +178,12 @@
 			$this->freed = true;
 		}
 
+		/* __clone support */
+		public function __clone()
+		{
+			/* Copy palette if palette etc */
+		}
+
 		/* Internal helper function for verification of a type hint -- Marked as protected so child classes can use it */
 
 		protected isValidType(int $type) : bool
@@ -391,6 +397,16 @@
 
 		public function gammaCorrect(float $input, float $output) : bool
 		{
+		}
+
+		/* Palette copy */
+
+		public function copyPalette(gdImage $im)
+		{
+			if(!$this->trueColor || !$im->trueColor)
+			{
+				throw new gdException('Both the destination and source images must be palette based');
+			}
 		}
 
 		/* Interlace */

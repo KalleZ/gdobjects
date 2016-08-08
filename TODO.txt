@@ -38,11 +38,9 @@ imagefilledellipse
 imagefilledpolygon
 imagefilledrectangle
 imagefilltoborder
-imagepalettecopy
 imagepolygon
 imagerectangle
 
 Other
 
 GIF Animation
-gdImage::__clone support
