@@ -1,12 +1,3 @@
-Constants:
-
-IMG_ARC_ROUNDED
-IMG_ARC_PIE
-IMG_ARC_CHORD
-IMG_ARC_NOFILL
-IMG_ARC_EDGED
-
-
 Functions:
 
 imagecolorallocate
@@ -30,12 +21,6 @@ imagecopymerge
 imagecopymergegray
 imagecopyresampled
 imagecopyresized
-imagefill
-imagefilledarc
-imagefilledellipse
-imagefilledpolygon
-imagefilledrectangle
-imagefilltoborder
 
 Other
 

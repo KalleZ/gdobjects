@@ -100,6 +100,14 @@
 		const COLOR_STYLEBRUSHED 	= 4;
 		const COLOR_TRANSPARENT  	= 5;
 
+		/* Filled arc constants */
+
+		const ARC_ROUNDED		= 1;
+		const ARC_PIE			= 1; /* Same as ARC_ROUNDED */
+		const ARC_CHORD			= 2;
+		const ARC_NOFILL		= 3;
+		const ARC_EDGED			= 4;
+
 
 		/* Image sizes, readonly */
 
@@ -697,6 +705,33 @@
 		}
 
 		public function rectangle(int $x1, int $y1, int $x2, int $y2, gdColor | int $color)
+		{
+		}
+
+		/* Filled drawing methods */
+
+		public function fill(int $x, int $y, gdColor | int $color) : bool
+		{
+		}
+
+		public function fillToBorder(int $x, int $y, gdColor | int $border_color, gdColor | int $inner_color) : bool
+		{
+		}
+
+		public function filledArc(int $cx, int $cy, int $width, int $height, int $start, int $end, gdColor | int $color, int $style) : bool
+		{
+		}
+
+		public function filledEllipse(int $cx, int $cy, int $width, int $height, gdColor | int $color) : bool
+		{
+		}
+
+		public function filledPolygon(array $points, gdColor | int $color) : bool
+		{
+			/* Note, $num_points is intentionally missing, sizeof($points) should be sufficient */
+		}
+
+		public function filledRectangle(int $x1, int $y1, int $x2, int $y2, gdColor | int $color) : bool
 		{
 		}
 
