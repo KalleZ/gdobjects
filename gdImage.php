@@ -683,6 +683,23 @@
 		{
 		}
 
+		public function arc(int $cx, int $cy, int $width, int $height, int $start, int $end, gdColor | int $color) : bool
+		{
+		}
+
+		public function ellipse(int $cx, int $cy, int $width, int $height, gdColor | int $color) : bool
+		{
+		}
+
+		public function polygon(array $points, gdColor | int $color) : bool
+		{
+			/* Note, $num_points is intentionally missing, sizeof($points) should be sufficient */
+		}
+
+		public function rectangle(int $x1, int $y1, int $x2, int $y2, gdColor | int $color)
+		{
+		}
+
 		/* Affine methods */
 
 		public function affine(array $affine, int $clip_x = NULL, int $clip_y = NULL, int $clip_width = NULL, int $clip_height = NULL) : bool

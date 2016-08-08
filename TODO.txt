@@ -9,7 +9,6 @@ IMG_ARC_EDGED
 
 Functions:
 
-imagearc
 imagecolorallocate
 imagecolorallocatealpha
 imagecolorat
@@ -31,15 +30,12 @@ imagecopymerge
 imagecopymergegray
 imagecopyresampled
 imagecopyresized
-imageellipse
 imagefill
 imagefilledarc
 imagefilledellipse
 imagefilledpolygon
 imagefilledrectangle
 imagefilltoborder
-imagepolygon
-imagerectangle
 
 Other
 
