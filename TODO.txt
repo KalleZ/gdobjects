@@ -1,5 +1,0 @@
-imagecopy			gdImage
-imagecopymerge			gdImage
-imagecopymergegray		gdImage
-imagecopyresampled		gdImage
-imagecopyresized		gdImage

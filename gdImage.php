@@ -865,5 +865,27 @@
 		public function colorResolveAlpha(int $r, int $g, int $b, int $alpha) : gdColor
 		{
 		}
+
+		/* Copying & Merging */
+
+		public function copy(gdImage $src_im, int $dst_x, int $dst_y, int $src_x, int $src_y, int $src_width, int $src_height) : bool
+		{
+		}
+
+		public function copyMerge(gdImage $src_im, int $dst_x, int $dst_y, int $src_x, int $src_y, int $src_width, int $src_height, int $pct) : bool
+		{
+		}
+
+		public function copyMergeGray(gdImage $src_im, int $dst_x, int $dst_y, int $src_x, int $src_y, int $src_width, int $src_height, int $pct) : bool
+		{
+		}
+
+		public function copyResampled(gdImage $src_im, int $dst_x, int $dst_y, int $src_x, int $src_y, int $dst_width, int $dst_height, int $src_width, int $src_height) : bool
+		{
+		}
+
+		public function copyResized(gdImage $src_im, int $dst_x, int $dst_y, int $src_x, int $src_y, int $dst_width, int $dst_height, int $src_width, int $src_height) : bool
+		{
+		}
 	}
 ?>
