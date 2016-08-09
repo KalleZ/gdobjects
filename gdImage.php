@@ -128,7 +128,7 @@
 		public bool $antiAlias		= false;	/* For true color only */
 		public bool $interlace		= false;	/* Used for progressive JPEGs */
 
-		public bool $freed		= false;	/* [readonly] is ->destroy() called? */
+		public bool $freed		= false;	/* [readonly] is ->destroy() called? This should be checked on all method calls */
 		public int $type		= 0;		/* [readonly] gd::XXX type constants */
 		public bool $sendHeader		= false;	/* [readonly] Auto send header for outputs, defaults to false */
 
