@@ -133,6 +133,11 @@
 		public bool $sendHeader		= false;	/* [readonly] Auto send header for outputs, defaults to false */
 
 
+		/* Animation property */
+
+		public gdAnimation $animation 	= NULL;		/* May be overriden manually or by gdImage::animate() */
+
+
 		/*
 		 * Constructor for userland usage
 		 *
@@ -767,6 +772,31 @@
 
 		public function stringUp(int $font, int $x, int $y, string $string, gdColor | int $color) : bool
 		{
+		}
+
+		/* Animation, only one animation object can be attached per gdImage */
+
+		public function animate(gdAnimation $animation)
+		{
+			/* 
+			 * This could be extended to APNG in the future, although this approach 
+			 * might not work if no type is defined, so this should potentially be in 
+			 * the output methods
+			 */
+			if($this->type != gd::TYPE_GIF)
+			{
+				throw new gdException('Only animated GIFs are supported');
+			}
+
+			/* 
+			 * $prev_im from each frame is generated here
+			 * 
+			 * Each $frame->im needs to be converted to a matching type with 
+			 * that of the output, meaning there can be color loss if palette <> true color
+			 * images are mixed
+			 */
+
+			$this->animation = $animation;
 		}
 	}
 ?>
