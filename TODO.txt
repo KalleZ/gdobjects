@@ -21,8 +21,3 @@ imagecopymerge
 imagecopymergegray
 imagecopyresampled
 imagecopyresized
-
-Other
-
-imagesetclip()
-imagegetclip()

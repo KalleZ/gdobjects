@@ -798,5 +798,15 @@
 
 			$this->animation = $animation;
 		}
+
+		/* Clipping methods */
+
+		public function setClip($x1, $y1, $x2, $y2) : bool
+		{
+		}
+
+		public function getClip() : array
+		{
+		}
 	}
 ?>
