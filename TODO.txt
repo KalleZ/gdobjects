@@ -1,12 +1,8 @@
-imagecolorallocate		gdColor
-imagecolorallocatealpha		gdColor
-imagecolordeallocate		gdColor
-imagecolorexact			gdColor
-imagecolorexactalpha		gdColor
+imagecolorexact			gdImage
+imagecolorexactalpha		gdImage
 imagecolormatch			gdImage
 imagecolorresolve		gdImage
 imagecolorresolvealpha		gdImage
-imagecolorsforindex		gdColor
 imagecopy			gdImage
 imagecopymerge			gdImage
 imagecopymergegray		gdImage
