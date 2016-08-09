@@ -845,5 +845,25 @@
 		{
 			/* Variant that re-uses gdColor for its second argument */
 		}
+
+		public function colorExtract(int $r, int $g, int $b) : gdColor
+		{
+		}
+
+		public function colorExtractAlpha(int $r, int $g, int $b, int $alpha) : gdColor
+		{
+		}
+
+		public function colorMatch(gdImage $src_im) : bool
+		{
+		}
+
+		public function colorResolve(int $r, int $g, int $b) : gdColor
+		{
+		}
+
+		public function colorResolveAlpha(int $r, int $g, int $b, int $alpha) : gdColor
+		{
+		}
 	}
 ?>

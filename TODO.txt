@@ -1,8 +1,3 @@
-imagecolorexact			gdImage
-imagecolorexactalpha		gdImage
-imagecolormatch			gdImage
-imagecolorresolve		gdImage
-imagecolorresolvealpha		gdImage
 imagecopy			gdImage
 imagecopymerge			gdImage
 imagecopymergegray		gdImage
