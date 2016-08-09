@@ -808,5 +808,42 @@
 		public function getClip() : array
 		{
 		}
+
+		/* Color methods */
+
+		public function colorAt(int $x, int $y) : gdColor
+		{
+		}
+
+		public function colorClosest(int $r, int $g, int $b) : gdColor
+		{
+		}
+
+		public function colorClosestAlpha(int $r, int $g, int $b, int $a) : gdColor
+		{
+		}
+
+		public function colorClosestHWB(int $r, int $g, int $b) : gdColor
+		{
+		}
+
+		public function getTotalColors() : int
+		{
+		}
+
+		public function setTransparentColor(gdColor | int $color = -1) : gdColor | int
+		{
+			/* May return -1 if there is no transprent pixels, otherwise a gdColor object */
+		}
+
+		public function colorSet(gdColor | int $index, int $r, int $g, int $b, int $a = 0) : bool
+		{
+			/* Variant that is compatible with imagecolorset() */
+		}
+
+		public function colorSet(gdColor | int $index, gdColor | int $new_index) : bool
+		{
+			/* Variant that re-uses gdColor for its second argument */
+		}
 	}
 ?>

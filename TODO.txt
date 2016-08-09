@@ -1,23 +1,14 @@
-Functions:
-
-imagecolorallocate
-imagecolorallocatealpha
-imagecolorat
-imagecolorclosest
-imagecolorclosestalpha
-imagecolorclosesthwb
-imagecolordeallocate
-imagecolorexact
-imagecolorexactalpha
-imagecolormatch
-imagecolorresolve
-imagecolorresolvealpha
-imagecolorset
-imagecolorsforindex
-imagecolorstotal
-imagecolortransparent
-imagecopy
-imagecopymerge
-imagecopymergegray
-imagecopyresampled
-imagecopyresized
+imagecolorallocate		gdColor
+imagecolorallocatealpha		gdColor
+imagecolordeallocate		gdColor
+imagecolorexact			gdColor
+imagecolorexactalpha		gdColor
+imagecolormatch			gdImage
+imagecolorresolve		gdImage
+imagecolorresolvealpha		gdImage
+imagecolorsforindex		gdColor
+imagecopy			gdImage
+imagecopymerge			gdImage
+imagecopymergegray		gdImage
+imagecopyresampled		gdImage
+imagecopyresized		gdImage
