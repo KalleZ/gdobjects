@@ -111,8 +111,8 @@
 
 		/* Image sizes, readonly */
 
-		public $x		= 0;
-		public $y		= 0;
+		public int $x		= 0;
+		public int $y		= 0;
 
 
 		/*
@@ -122,15 +122,15 @@
 		 * behavior if changed
 		 */
 
-		public $trueColor 	= false;	/* Calls ->toPalette() or ->toTrueColor() depending on the new value */
-		public $alphaBlending	= false;	/* Only changable for true color images */
-		public $saveAlpha	= false;	/* Save alpha flag, only works if $alphaBlending is off */
-		public $antiAlias	= false;	/* For true color only */
-		public $interlace	= false;	/* Used for progressive JPEGs */
+		public bool $trueColor 		= false;	/* Calls ->toPalette() or ->toTrueColor() depending on the new value */
+		public bool $alphaBlending	= false;	/* Only changable for true color images */
+		public bool $saveAlpha		= false;	/* Save alpha flag, only works if $alphaBlending is off */
+		public bool $antiAlias		= false;	/* For true color only */
+		public bool $interlace		= false;	/* Used for progressive JPEGs */
 
-		public $freed		= false;	/* [readonly] is ->destroy() called? */
-		public $type		= 0;		/* [readonly] gd::XXX type constants */
-		public $sendHeader	= false;	/* [readonly] Auto send header for outputs, defaults to false */
+		public bool $freed		= false;	/* [readonly] is ->destroy() called? */
+		public int $type		= 0;		/* [readonly] gd::XXX type constants */
+		public bool $sendHeader		= false;	/* [readonly] Auto send header for outputs, defaults to false */
 
 
 		/*
